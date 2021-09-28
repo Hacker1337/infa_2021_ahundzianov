@@ -1,1 +1,1 @@
-Lerning project for university seminar
+Learning project for university seminar
