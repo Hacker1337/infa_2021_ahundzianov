@@ -35,21 +35,31 @@ def elips(*coords, color=grey):
 rect(screen, white, (0, 600, 1500, 600))
 rect(screen, blue, (0, 0, 1500, 600))
 
-# медведь
-elips(140, 430, 310, 525)
-elips(2, 490, 260, 950)
-lines(screen, black, False, [(264, 695), (317, 600), (633, 338)], width=7)  # удочка
-elips(215, 590, 330, 635)
-elips(150, 820, 330, 950)
-elips(260, 930, 400, 974)
-elips(145, 425, 177, 452)
-elips(208, 447, 219, 459, color=black)
-elips(298, 447, 308, 459, color=black)
 
-elips(443, 780, 754, 871, color=(77, 77, 77))   # серая фигня в лунке
-elips(480, 810, 715, 871, color=(20, 80, 68))   # зеленая
-line(screen, black, (633, 338), (633, 830))     # леска
-lines(screen, black, False, [(200, 499), (277, 497), (309, 485)])     # улыбка
+
+def draw_bear(x0, y0, xsize=630, ysize=510):     # медведь
+    """x0, y0 - top left corner"""
+    Ysize = 510     # default size
+    Xsize = 630     # default size
+    lines(screen, black, False, [((264-2)*xsize//Xsize+x0, 695), ((317-2)*xsize//Xsize+x0, 600), ((633-2)*xsize//Xsize+x0, 338)], width=7)  # удочка
+    elips((140-2)*xsize//Xsize+x0, (430-420)*ysize//Ysize+y0, 310*xsize//Xsize, 525*ysize//Ysize)
+    elips((2-2  )*xsize//Xsize+x0, (490-420)*ysize//Ysize+y0, 260*xsize//Xsize, 950*ysize//Ysize)
+    elips((215-2)*xsize//Xsize+x0, (590-420)*ysize//Ysize+y0, 330*xsize//Xsize, 635*ysize//Ysize)
+    elips((150-2)*xsize//Xsize+x0, (820-420)*ysize//Ysize+y0, 330*xsize//Xsize, 950*ysize//Ysize)
+    elips((260-2)*xsize//Xsize+x0, (930-420)*ysize//Ysize+y0, 400*xsize//Xsize, 974*ysize//Ysize)
+    elips((145-2)*xsize//Xsize+x0, (425-420)*ysize//Ysize+y0, 177*xsize//Xsize, 452*ysize//Ysize)
+    elips((208-2)*xsize//Xsize+x0, (447-420)*ysize//Ysize+y0, 219*xsize//Xsize, 459*ysize//Ysize, color=black)
+    elips((298-2)*xsize//Xsize+x0, (447-420)*ysize//Ysize+y0, 308*xsize//Xsize, 459*ysize//Ysize, color=black)
+
+    elips((443-2)*xsize//Xsize+x0, (780-420)*ysize//Ysize+y0, 754*xsize//Xsize, 871*ysize//Ysize, color=(77, 77, 77))  # серая фигня в лунке
+    elips((480-2)*xsize//Xsize+x0, (810-420)*ysize//Ysize+y0, 715*xsize//Xsize, 871*ysize//Ysize, color=(20, 80, 68))  # зеленая
+    line(screen, black, ((633-2)*xsize//Xsize+x0, (338-430)*ysize//Ysize+y0), ((633-2)*xsize//Xsize+x0, (830-430)*ysize//Ysize+y0))  # леска
+    lines(screen, black, False, [((200-2)*xsize//Xsize+x0, (499-430)*ysize//Ysize+y0), ((277-2)*xsize//Xsize+x0, (497-430)*ysize//Ysize+y0), ((309-2)*xsize//Xsize+x0, (485-430)*ysize//Ysize+y0)])  # улыбка
+
+
+draw_bear(2, 420)
+
+
 # a = ellipse(screen, white, (10, 600, 300, 600))
 # b = ellipse(screen, black, (10, 600, 300, 600), width=1)
 # pygame.transform.rotate(screen, 45)
